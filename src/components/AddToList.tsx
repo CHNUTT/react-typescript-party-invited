@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { FC, ChangeEvent, Dispatch, useState } from 'react';
 import { IState as ISProps } from '../App';
 
 interface IProps {
 	people: ISProps['people'];
-	setPeople: React.Dispatch<React.SetStateAction<ISProps['people']>>;
+	setPeople: Dispatch<React.SetStateAction<ISProps['people']>>;
 }
 
-const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
+const AddToList: FC<IProps> = ({ people, setPeople }) => {
 	const [input, setInput] = useState({
 		name: '',
 		age: 0,
@@ -15,7 +15,7 @@ const AddToList: React.FC<IProps> = ({ people, setPeople }) => {
 	});
 
 	const handleChange = (
-		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+		e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
 	): void => {
 		setInput({
 			...input,

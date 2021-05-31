@@ -1,6 +1,7 @@
+import { FC } from 'react';
 import { IState as IProps } from '../App';
 
-const List: React.FC<IProps> = ({ people }) => {
+const List: FC<IProps> = ({ people }) => {
 	const renderList = (): JSX.Element[] =>
 		people.map((person, index) => (
 			<li key={index} className='List'>
