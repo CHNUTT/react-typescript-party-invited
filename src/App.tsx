@@ -1,12 +1,7 @@
 import { useState } from 'react';
-import './App.css';
+import List from './components/List';
 
-// type People = {
-//   name: string,
-//   avatar: string,
-//   age: number,
-//   note?: string
-// }
+import './App.css';
 
 interface IState {
 	people: {
@@ -18,11 +13,12 @@ interface IState {
 }
 
 function App() {
-	const [people, setPeople] = useState<IState["people"]>([]);
+	const [people, setPeople] = useState<IState['people']>([]);
 
 	return (
 		<div className='App'>
 			<h1>People Invited to my Part</h1>
+      <List people={people} />
 		</div>
 	);
 }
