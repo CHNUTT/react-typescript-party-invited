@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import List from './components/List';
+import AddToList from './components/AddToList';
 
 import './App.css';
 
-interface IState {
+export interface IState {
 	people: {
 		name: string;
 		avatar: string;
@@ -29,10 +30,15 @@ function App() {
 		},
 	]);
 
+	// const addToPeople = (person: IState['person']) => {
+	// 	setPeople((people) => [...people]);
+	// };
+
 	return (
 		<div className='App'>
 			<h1>People Invited to my Part</h1>
 			<List people={people} />
+			<AddToList people={people} setPeople={setPeople} />
 		</div>
 	);
 }
